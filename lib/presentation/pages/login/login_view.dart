@@ -2,9 +2,11 @@ import 'package:buildcondition/buildcondition.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:soq_app/app/app_prefs.dart';
+import 'package:soq_app/app/injection_container.dart';
 import 'package:soq_app/presentation/bloc/auth/login_bloc/login_cubit.dart';
 import 'package:soq_app/presentation/bloc/auth/login_bloc/login_states.dart';
-import 'package:soq_app/presentation/pages/layout/layout_view.dart';
+import 'package:soq_app/presentation/recources/route_manger.dart';
 import 'package:soq_app/presentation/recources/strings_manger.dart';
 import 'package:soq_app/presentation/widgets/widgets.dart';
 
@@ -22,6 +24,7 @@ class _LoginViewState extends State<LoginView> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final AppPreferences _appPreferences = instance<AppPreferences>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +33,9 @@ class _LoginViewState extends State<LoginView> {
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {
           if (state is LoginSuccessState) {
-            Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => const Layout()),
-                ),
-                (Route<dynamic> route) => false);
+            _appPreferences.setUserToken(state.authentication.data!.token);
+            Navigator.pushNamedAndRemoveUntil(
+                context, Routes.layoutRoute, (Route<dynamic> route) => false);
           }
         },
         builder: (context, state) {

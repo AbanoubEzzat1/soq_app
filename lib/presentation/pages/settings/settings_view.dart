@@ -105,7 +105,7 @@ class SettingsView extends StatelessWidget {
                     const SizedBox(height: AppSize.s15),
                     deffaultButton(
                       function: () {
-                        HomeCubit.get(context).logout();
+                        HomeCubit.get(context).logoutFun();
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soq_app/presentation/bloc/layout_bloc/layout_cubit.dart';
 import 'package:soq_app/presentation/bloc/layout_bloc/layout_states.dart';
+import 'package:soq_app/presentation/recources/strings_manger.dart';
 import 'package:soq_app/presentation/recources/values_manger.dart';
 import 'package:soq_app/presentation/widgets/widgets.dart';
 
@@ -18,7 +19,12 @@ class Layout extends StatelessWidget {
         LayoutCubit cubit = LayoutCubit.get(context);
         return Scaffold(
           appBar: AppBar(
+            centerTitle: false,
             elevation: AppSize.s0,
+            title: Text(
+              AppStrings.soq,
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
             actions: [
               IconButton(
                 onPressed: () {

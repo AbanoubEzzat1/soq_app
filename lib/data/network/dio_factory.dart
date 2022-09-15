@@ -1,8 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:soq_app/app/app_prefs.dart';
 import 'package:soq_app/app/constants.dart';
 
@@ -31,13 +29,13 @@ class DioFactory {
       receiveTimeout: Constants.apiTimeOut,
       sendTimeout: Constants.apiTimeOut,
     );
-    if (!kReleaseMode) {
-      dio.interceptors.add(PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseHeader: true,
-      ));
-    }
+    // if (!kReleaseMode) {
+    //   dio.interceptors.add(PrettyDioLogger(
+    //     requestHeader: true,
+    //     requestBody: true,
+    //     responseHeader: true,
+    //   ));
+    // }
     return dio;
   }
 }

@@ -254,6 +254,7 @@ class HomeCubit extends Cubit<HomeStates> {
       await _appPreferences.removeUserLoggedIn();
       await _appPreferences.removeToken();
       _localDataSource.clearCache();
+
       emit(LogoutSuccessState(data));
     });
   }

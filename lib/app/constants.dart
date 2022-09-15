@@ -8,3 +8,5 @@ class Constants {
   static const int apiTimeOut = 60000;
   static String token = "SEND TOKEN HERE";
 }
+
+String ttoken = "";

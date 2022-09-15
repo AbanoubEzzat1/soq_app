@@ -64,6 +64,7 @@ class AppStrings {
   static const String name = "name";
   static const String nameMustNoTbeEmpty = "name_must_not_be_empty";
   static const String update = "update";
+  static const String soq = "SOQ";
 
   //Errors
   static const String badRequestError = "bad_request_error";

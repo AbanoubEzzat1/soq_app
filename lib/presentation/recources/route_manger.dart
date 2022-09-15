@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:soq_app/presentation/bloc/layout_bloc/layout_cubit.dart';
 import 'package:soq_app/presentation/bloc/onboarding/onboarding_cubit.dart';
 import 'package:soq_app/presentation/pages/cart/cart_view.dart';
 import 'package:soq_app/presentation/pages/favorites/favorites_view.dart';
@@ -28,7 +29,7 @@ class Routes {
 }
 
 class RouteGenerator {
-  static Route<dynamic> getRoute(RouteSettings settings) {
+  Route getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
@@ -44,7 +45,11 @@ class RouteGenerator {
           builder: (context) => const LoginView(),
         );
       case Routes.layoutRoute:
-        return MaterialPageRoute(builder: (_) => const Layout());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => LayoutCubit(),
+                  child: const Layout(),
+                ));
       case Routes.register:
         return MaterialPageRoute(
           builder: (context) => RegisterView(),

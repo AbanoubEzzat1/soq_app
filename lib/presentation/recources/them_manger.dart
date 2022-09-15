@@ -48,58 +48,63 @@ ThemeData getThemData() {
       ),
     ),
     textTheme: TextTheme(
-        headlineLarge: getBoldStyle(
-          color: ColorsManger.black,
-          fontSize: FontSize.s18,
-        ),
-        titleMedium: getSemiBoldStyle(
-          color: ColorsManger.black,
-          fontSize: FontSize.s18,
-        ),
-        titleSmall: getRegularStyle(
-          color: ColorsManger.white,
-          fontSize: FontSize.s16,
-        ),
-        headlineMedium: getRegularStyle(
-          color: ColorsManger.darkGrey,
-          fontSize: FontSize.s14,
-        ),
-        bodyLarge: getBoldStyle(
-          color: ColorsManger.primary,
-          fontSize: 18,
-        ),
-        bodySmall: getBoldStyle(
-          color: ColorsManger.white,
-          fontSize: FontSize.s14,
-        ),
-        displayMedium: getBoldStyle(
-          color: ColorsManger.primary,
-          fontSize: FontSize.s20,
-        ),
-        displaySmall: getBoldStyle(
-          color: ColorsManger.blue,
-          fontSize: FontSize.s20,
-        ),
-        displayLarge: getLightStyle(
-          color: ColorsManger.darkGrey,
-          fontSize: FontSize.s16,
-        ),
-        labelSmall: getBoldStyle(
-          color: ColorsManger.blue,
-          fontSize: FontSize.s18,
-        ),
-        bodyMedium: getBoldStyle(
-          color: ColorsManger.primary,
-          fontSize: FontSize.s18,
-        ),
-        headlineSmall: getBoldStyle(
-          color: ColorsManger.white,
-          fontSize: FontSize.s8,
-        ),
-        titleLarge: getSemiBoldStyle(
-          color: ColorsManger.lightGrey,
-          fontSize: FontSize.s18,
-        )),
+      headlineLarge: getBoldStyle(
+        color: ColorsManger.black,
+        fontSize: FontSize.s18,
+      ),
+      titleMedium: getBoldStyle(
+        color: ColorsManger.black,
+        fontSize: FontSize.s18,
+      ),
+      titleSmall: getRegularStyle(
+        color: ColorsManger.white,
+        fontSize: FontSize.s16,
+      ),
+      headlineMedium: getRegularStyle(
+        color: ColorsManger.darkGrey,
+        fontSize: FontSize.s14,
+      ),
+      bodyLarge: getBoldStyle(
+        color: ColorsManger.primary,
+        fontSize: 18,
+      ),
+      bodySmall: getBoldStyle(
+        color: ColorsManger.white,
+        fontSize: FontSize.s14,
+      ),
+      displayMedium: getBoldStyle(
+        color: ColorsManger.primary,
+        fontSize: FontSize.s20,
+      ),
+      displaySmall: getBoldStyle(
+        color: ColorsManger.blue,
+        fontSize: FontSize.s20,
+      ),
+      displayLarge: getLightStyle(
+        color: ColorsManger.darkGrey,
+        fontSize: FontSize.s16,
+      ),
+      labelSmall: getBoldStyle(
+        color: ColorsManger.blue,
+        fontSize: FontSize.s18,
+      ),
+      bodyMedium: getBoldStyle(
+        color: ColorsManger.primary,
+        fontSize: FontSize.s18,
+      ),
+      headlineSmall: getBoldStyle(
+        color: ColorsManger.white,
+        fontSize: FontSize.s8,
+      ),
+      titleLarge: getSemiBoldStyle(
+        color: ColorsManger.lightGrey,
+        fontSize: FontSize.s18,
+      ),
+      labelLarge: getBoldStyle(
+        color: ColorsManger.white,
+        fontSize: FontSize.s22,
+      ),
+    ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(AppPadding.p8),
       hintStyle:

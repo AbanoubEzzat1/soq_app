@@ -41,7 +41,7 @@ Future<void> initAppModule() async {
       () => NetworkInfoImpl(InternetConnectionChecker()));
 
   // dio factory
-  instance.registerSingleton<DioFactory>(DioFactory(instance()));
+  instance.registerLazySingleton<DioFactory>(() => DioFactory(instance()));
   Dio dio = await instance<DioFactory>().getDio();
 
   //appServiseClient
@@ -78,91 +78,4 @@ Future<void> initAppModule() async {
       () => SearchUseCaase(repositorImpl as RepositoryImpl));
   instance.registerLazySingleton<LogoutUseCase>(
       () => LogoutUseCase(repositorImpl as RepositoryImpl));
-
-  // instance.registerFactory(() => FavoritesCubit());
-  //FavoritesCubit favoritesCubit = instance<FavoritesCubit>().getFavorites();
-  //initloginModule();
 }
-
-// initloginModule() {
-//   if (!GetIt.I.isRegistered<LoginUseCase>()) {
-//     instance.registerLazySingleton<LoginUseCase>(
-//         () => LoginUseCase(instance<RepositoryImpl>()));
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:dio/dio.dart';
-// import 'package:get_it/get_it.dart';
-// import 'package:internet_connection_checker/internet_connection_checker.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:soq_app/app/app_prefs.dart';
-// import 'package:soq_app/data/data_source/remote_data_source.dart';
-// import 'package:soq_app/data/network/app_api.dart';
-// import 'package:soq_app/data/network/dio_factory.dart';
-// import 'package:soq_app/data/network/network_info.dart';
-// import 'package:soq_app/data/repository/repository_impl.dart';
-// import 'package:soq_app/domain/repository.dart';
-// import 'package:soq_app/domain/usecases/login_usecase.dart';
-// import 'package:soq_app/presentation/bloc/auth/login_cubit.dart';
-
-// // final instance = GetIt.instance;
-// // Future<void> initAppModule() async {
-// //   final sharedPrefs = await SharedPreferences.getInstance();
-// //   instance.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
-// //   instance
-// //       .registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
-// // }
-
-// final instance = GetIt.instance;
-
-// Future<void> initAppModule() async {
-//   //app module whare we put all generic di for all project
-
-//   //SharedPreferences instance
-//   final sharedPrefs = await SharedPreferences.getInstance();
-//   instance.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
-
-//   //AppPreferences instance
-//   instance.registerLazySingleton<AppPreferences>(
-//       () => AppPreferences(instance<SharedPreferences>()));
-
-//   //network info
-//   instance.registerLazySingleton<NetworkInfo>(
-//       () => NetworkInfoImpl(InternetConnectionChecker()));
-
-//   // dio factory --
-//   Dio dio = await instance<DioFactory>().getDio();
-//   instance.registerLazySingleton<DioFactory>(() => DioFactory(instance<Dio>()));
-
-//   //appServiseClient
-//   instance.registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio));
-
-//   //remoteDataSourse
-//   instance.registerLazySingleton<ReomteDataSource>(
-//       () => ReomteDataSourceImpl(instance<AppServiceClient>()));
-
-//   //repository
-//   instance.registerLazySingleton<Repository>(() =>
-//       RepositoryImpl(instance<ReomteDataSource>(), instance<NetworkInfo>()));
-// }
-
-// initLoginModule() {
-//   if (!GetIt.I.isRegistered<LoginUseCase>()) {
-//     instance.registerFactory<LoginUseCase>(
-//         () => LoginUseCase(instance<RepositoryImpl>()));
-//     instance.registerFactory(
-//         () => LoginCubit(loginUseCase: instance<LoginUseCase>()));
-//   }
-// }
-
