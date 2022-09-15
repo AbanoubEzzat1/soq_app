@@ -41,6 +41,11 @@ class _LoginViewState extends State<LoginView> {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
+              centerTitle: false,
+              title: Text(
+                AppStrings.soq,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
               elevation: AppSize.s0,
             ),
             body: SingleChildScrollView(
