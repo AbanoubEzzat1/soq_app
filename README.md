@@ -1,16 +1,7 @@
-# soq_app
+# Soq
 
-A new Flutter project.
+<img src="https://github.com/AbanoubEzzat1/soq_app/blob/main/ShopApp.jpg">
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Architected a sophisticated online store application using Flutter, incorporating clean architecture principles and design patterns for optimal maintainability.
+-	Leveraged advanced packages including Cubit, localization, GitIt, Retrofit, and Dio to seamlessly interface with APIs, ensuring a smooth user experience.
+-	Prioritized maintainability and flexibility through the implementation of clean architecture principles, contributing to a robust and adaptable application.
